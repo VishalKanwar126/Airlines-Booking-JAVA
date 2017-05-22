@@ -1,0 +1,141 @@
+import java.io.*;
+import java.util.*;
+
+
+/*
+public class seat extends flight{
+    int seat_no;
+    int flight_no;
+
+
+}*/
+
+public class economy_seat{
+    static int seat_no=0;
+    int flight_no;
+    int price;
+    int tax;
+    int flag=0;
+
+    economy_seat()
+    {
+        price=0.2*base_price+base_price;
+        tax=0.05*price;
+        price=price+tax;
+    }
+}
+
+public class business_seat{
+    static int seat_no=0;
+    int flight_no;
+    int price;
+    int tax;
+    flag=0;
+
+    business_seat()
+    {
+        price=0.3*base_price+base_price+0.2*base_price;
+        tax=0.01*price;
+        price=price+tax;
+    }
+
+}
+
+
+public class flight{
+
+    int flight_no;
+    String source;
+    String destination;
+    int max_seats;
+    int base_price;
+    int eco_seats;
+
+    economy_seat economy[]=new economy_seat[eco_seats];
+    business_seat business[]=new business_seat[max_seats-eco_seats];
+
+    int z;
+    for(z=0;z<=eco_seats;z++)
+    {
+        economy_seat[z]=0;
+    }
+    for(z=0;z<max_seats-eco_seats;z++)
+    {
+        business_seat[z]=0;
+    }
+
+     flight()
+    {
+        flight_no=000;
+        souce='unknown';
+        destination='unknown';
+        max_seats=1;
+        base_price=0;
+    }
+
+    void input(int a,String b,String c,int d,float e,int f)
+    {
+        flight_no=a;
+        source=b;
+        destination=c;
+        max_seats=d;
+        base_price=e;
+        eco_seats=f;
+    }
+
+    void booking()
+    {
+
+
+
+    }
+
+    void cancel()
+    {
+    }
+}
+
+
+public class main()
+{
+    public static void main(String args[])
+    {
+
+        int q;
+        String w;
+        String e;
+        int r;
+        int t,y;
+
+        scanner scan=new scanner(System.in);
+        System.out.println("Enter the Flight Number: ");
+        q=scan.nextInt();
+        System.out.println("Enter the Source of the flight: ");
+        w=scan.next();
+        System.out.println("Enter the Destination of the flight: ");
+        e=scan.next();
+        System.out.println("Enter the Maximum number of seats: ");
+        r=scan.nextInt();
+        System.out.println("Enter the Base price for 1 seat: ");
+        t=scan.nextInt();
+        System.out.println("Enter the the number of economy seats: ");
+        y=scan.nextInt();
+
+
+        flight f1=new flight();
+        fi.input(q,w,e,r,t,y);
+
+        fi.booking();
+
+
+
+
+
+
+
+
+
+
+    }
+}
+
